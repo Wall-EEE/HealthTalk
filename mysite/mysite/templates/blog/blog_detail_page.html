@@ -4,7 +4,7 @@
 
 {% block content %}
     {% image self.blog_image fill-1200x300 as banner %}
-    <img src="{{ banner.url }}" alt="{{ banner.alt }}" style='width: 100%; height: auto;'>
+   <img src="{{ banner.url }}" alt="{{ banner.alt }}" style='width: 100%; height: auto;'>
 
     <div class="container mt-5 mb-5">
         <div class="text-center">
@@ -26,9 +26,6 @@
                     </div>
                 {% endfor %}
             </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-">
@@ -36,6 +33,14 @@
                     {% include_block block %}
                 {% endfor %}
             </div>
+            <div>
+            <div class="row mt-5 mb-5">
+                <div class="col-sm-3">
+                    {% image self.blog_image fill-250x250 as blog_img %}
+                    <a href="{{ post.url }}">
+                        <img src="{{ blog_img.url }}" alt="{{ blog_img.alt }}">
+                    </a>
+                </div>
         </div>
     </div>
 {% endblock %}

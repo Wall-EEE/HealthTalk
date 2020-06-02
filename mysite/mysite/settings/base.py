@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.redirects',
     'wagtail.contrib.routable_page',
     'wagtail.contrib.sitemaps',
-
+    'wagtail.contrib.styleguide',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',

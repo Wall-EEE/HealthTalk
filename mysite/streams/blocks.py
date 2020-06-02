@@ -75,3 +75,28 @@ class CTABlock(blocks.StructBlock):
         template = "streams/cta_block.html"
         icon = "placeholder"
         label = 'Call to Action'
+
+
+class LinkStrucktValue(blocks.StructValue):
+    '''logic for our urls'''
+
+    def url(self):
+        page = self.get('button_page')
+        external_url = self.get('button_url')
+        if button_page:
+            return button_page.url
+        elif button_url:
+            return button_url
+        return None
+
+class ButtonBlock(blocks.StructBlock):
+    '''adder en internal eller external URL'''
+
+    button_page = blocks.PageChooserBlock(required=False, help_text='hvis valgt, vill denne url bli brukt først')
+    button_url = blocks.URLBlock(required=False, help_text='hvis valgt, vill denne url bli brukt')
+
+    class Meta:  # noqa
+        template = "streams/button_block.html"
+        icon = "placeholder"
+        label = 'Single Button'
+        value_class = LinkStrucktValue

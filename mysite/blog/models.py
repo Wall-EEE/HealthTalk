@@ -63,7 +63,7 @@ class BlogAuthor(models.Model):
         """String repr of this class."""
         return self.name
 
-    class Meta:  # noqa
+    class Meta:
         verbose_name = "Blog Author"
         verbose_name_plural = "Blog Authors"
 
@@ -78,8 +78,8 @@ class BlogListingPage(Page):
 
     custom_title = models.CharField(
         max_length=100,
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
         help_text='Overwrites the default title',
     )
 
@@ -99,8 +99,8 @@ class BlogDetailPage(Page):
 
     custom_title = models.CharField(
         max_length=100,
-        blank=False,
-        null=False,
+        blank=True,
+        null=True,
         help_text='Overwrites the default title',
     )
     blog_image = models.ForeignKey(

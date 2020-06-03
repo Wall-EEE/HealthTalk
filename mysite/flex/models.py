@@ -7,6 +7,7 @@ from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
 
 from streams import blocks
+from streams import wagtail_hooks
 
 
 class FlexPage(Page):
